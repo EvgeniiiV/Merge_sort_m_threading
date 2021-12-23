@@ -55,7 +55,7 @@ void mergeSort(vector<int>& arr, int l, int r)
     if (l >= r)
         return;
     int m = (l + r - 1) / 2;
-    if (multi_thread && r - l > 10000)
+    if (multi_thread && m - l > 10000)
     {
         auto sort_in_thread = async(launch::async, [&]() {
             mergeSort(arr, l, m);
